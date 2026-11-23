@@ -48,11 +48,24 @@
     margin-bottom: 4rem;
   }
   .title {
-    font-size: clamp(3rem, 9vw, 6.5rem);
+    font-size: clamp(2rem, 7.4vw, 6.5rem);
     letter-spacing: 0.12em;
     line-height: 1;
   }
-  .title .v { font-size: 1.12em; }
+  .title {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: baseline;
+    column-gap: 0.32em;
+    width: 100%;
+  }
+  .title .l { text-align: right; margin-right: -0.12em; }
+  .title .r { text-align: left; }
+  .title .v { font-size: 1.12em; letter-spacing: 0; }
+  @media (max-width: 640px) {
+    .title { font-size: 6.6vw; letter-spacing: 0.08em; }
+    .title .l { margin-right: -0.08em; }
+  }
   .subtitle {
     margin-top: 1.5rem;
     font-family: "Cormorant", Georgia, serif;
@@ -146,7 +159,7 @@
 
 <header>
   <p class="motto">AS IS IS I AS I AM</p>
-  <h1 class="title">MILES <span class="v">V</span> SOLDIER</h1>
+  <h1 class="title" aria-label="Miles V Soldier"><span class="l">MILES</span><span class="v">V</span><span class="r">SOLDIER</span></h1>
   <p class="subtitle">Four books of dispatches</p>
   <a class="scroll" href="#books">THE COLLECTION</a>
 </header>
